@@ -16,9 +16,12 @@ print(show_message_button.get_attribute('innerHTML'))
 assert 'Show Message' in chrome_browser.page_source
 user_message = chrome_browser.find_element(By.ID, 'user-message')
 user_message.clear()
-user_message.send_keys('I AM EXTRA COOL')
+user_message.send_keys('FILL IN TEXT')
 
 show_message_button.click()
 
 output_message = chrome_browser.find_element(By.ID, 'display')
-assert 'I AM EXTRA COOL' in output_message.text
+assert 'FILL IN TEXT' in output_message.text
+
+chrome_browser.close()
+# automatically close browser window
